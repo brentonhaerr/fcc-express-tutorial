@@ -7,9 +7,7 @@ function serveJSON(req, res) {
   if (process.env.MESSAGE_STYLE === 'uppercase') {
     message = message.toUpperCase();
   }
-  res.json({"message":message});
-  res.send("Message found");
-  res.send(process.env.MESSAGE_STYLE);
+  res.json({"message":message, "message_style": process.env.MESSAGE_STYLE});
 }
 
 app.get("/json", serveJSON);
