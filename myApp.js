@@ -8,6 +8,8 @@ function serveJSON(req, res) {
     message = message.toUpperCase();
   }
   res.json({"message":message});
+  res.send("Message found");
+  res.send(process.env.MESSAGE_STYLE);
 }
 
 app.get("/json", serveJSON);
